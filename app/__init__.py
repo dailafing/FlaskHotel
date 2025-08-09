@@ -1,14 +1,21 @@
+import os
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
-import os
 
 db = SQLAlchemy()
 login_manager = LoginManager()
 
 def create_app():
     app = Flask(__name__, instance_relative_config=True)
-    app.config.from_pyfile('config.py')
+    os.makedirs(app.instance_path, exist_ok=True)
+
+    db_path = os.path.join(app.instance_path, "hotel.db")
+    app.config.from_mapping(
+        SECRET_KEY=os.environ.get("SECRET_KEY", "dev"),
+        SQLALCHEMY_DATABASE_URI="sqlite:///" + db_path,
+        SQLALCHEMY_TRACK_MODIFICATIONS=False,
+    )
 
     db.init_app(app)
     login_manager.init_app(app)
@@ -18,7 +25,7 @@ def create_app():
 
     with app.app_context():
         from . import models
-        db.create_all()  # Auto-create tables for testing
+        db.create_all()
 
     return app
 
