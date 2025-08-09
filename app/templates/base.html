@@ -27,6 +27,18 @@
 
 </head>
 <body>
-    {% block content %}{% endblock %}
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+        <div class="container">
+            <a class="navbar-brand" href="{{ url_for('main.index') }}">Hailey's Hotel</a>
+        </div>
+
+    </nav>
+
+    <div class="container mt-4">
+        {% block content %}{% endblock %}
+    </div>
+    
 </body>
 </html>
