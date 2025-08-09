@@ -53,3 +53,6 @@ def my_bookings():
     bookings = Booking.query.order_by(Booking.start_date.desc()).all()
     return render_template("my_bookings.html", bookings=bookings)
 
+@bp.route("/contact")
+def contact():
+    return render_template("contact.html")
