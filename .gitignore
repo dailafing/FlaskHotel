@@ -1,1 +1,14 @@
-app/__pycache__/*
+# Python cache
+__pycache__/
+*.pyc
+
+# Local DBs
+/instance/*.db
+/*.db
+*.sqlite3
+
+# venv at repo root (your venv is named "FlaskHotel")
+/FlaskHotel/
+
+# macOS junk
+.DS_Store
