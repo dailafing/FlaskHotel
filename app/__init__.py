@@ -6,19 +6,9 @@ import os
 db = SQLAlchemy()
 login_manager = LoginManager()
 
-@login_manager.user_loader
-def load_user(user_id):
-    # Placeholder for now, we will wire this to the database later
-    return None
-
-
 def create_app():
     app = Flask(__name__, instance_relative_config=True)
-    app.config.from_mapping(
-        SECRET_KEY=os.environ.get("SECRET_KEY", "dev"),
-        SQLALCHEMY_DATABASE_URI="sqlite:///hotel.db",
-        SQLALCHEMY_TRACK_MODIFICATIONS=False
-    )
+    app.config.from_pyfile('config.py')
 
     db.init_app(app)
     login_manager.init_app(app)
@@ -26,4 +16,13 @@ def create_app():
     from . import routes
     app.register_blueprint(routes.bp)
 
+    with app.app_context():
+        from . import models
+        db.create_all()  # Auto-create tables for testing
+
     return app
+
+@login_manager.user_loader
+def load_user(user_id):
+    from .models import User
+    return User.query.get(int(user_id))
