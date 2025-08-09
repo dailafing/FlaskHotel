@@ -1,0 +1,202 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.site-warning-banner {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(209, 34, 242, 1.0);
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    padding: 10px;
+    z-index: 9999;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 1);
+}
+
+.main-content {
+    padding-top: 60px;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.login-box {
+    border: 1px solid #999;
+    border-style: solid;
+    box-shadow: 0 0 12px rgba(209, 34, 242, 1.0);
+    padding:50px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.hotel-image {
+    padding-bottom: 20px;
+}
+
+img {
+    border-radius: 8px;
+    width: 100%;
+}
+
+.login-box label {
+    display: block;
+    text-align: left;
+    margin: 15px 0 5px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.login-box input[type="email"],
+.login-box input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.login-box button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-box button:hover {
+    background-color: #0056b3;
+}
+
+.forgot-link, 
+.staff-link {
+    display: block;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.forgot-link:hover,
+.staff-link:hover {
+    text-decoration: underline;
+}
+
+.login-wrapper {
+    width: 80%;
+    max-width: 400px;
+    box-sizing: border-box;
+}
+
+.staff-login {
+    text-align: left;
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.create-account {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.create-account-button {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 10px;
+    font-size: 16px;
+    font-family: inherit;
+    font-weight: 400;
+    background-color: #28a745;
+    color: white;
+    border-radius: 4px;
+    text-decoration: none;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    line-height: normal;
+}
+
+.create-account-button:hover {
+    background-color: #218838;
+}
+
+.form-footer {
+    margin-top: 40px;
+}
+
+.gdpr-confirmation {
+    text-align: left;
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    font-size: 14px;
+}
+
+.gdpr-label {
+    font-weight: normal;
+}
+
+.success-message {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 12px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.popup-box {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    font-size: 16px;
+    max-width: 300px;
+}
+
+.popup-box button {
+    margin-top: 15px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.popup-box button:hover {
+    background-color: #0056b3;
+}
+
