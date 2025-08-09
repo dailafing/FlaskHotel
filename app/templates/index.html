@@ -1,20 +1,30 @@
 {% extends "base.html" %}
 {% block content %}
+
 <h1 class="mb-4">Available Rooms</h1>
+
 <div class="row">
+
   {% for room in rooms %}
   <div class="col-md-4">
     <div class="card mb-4">
+
       {% if room.image_url %}
-      <img src="{{ room.image_url }}" class="card-img-top" alt="{{ room.name }}">
+        <img src="{{ url_for('static', filename=room.image_url) }}" class="card-img-top" alt="{{ room.name }}">
+      {% else %}
+        <img src="{{ url_for('static', filename='images/HotelSml.jpg') }}" class="card-img-top" alt="{{ room.name }}">
       {% endif %}
+
       <div class="card-body">
         <h5 class="card-title">{{ room.name }}</h5>
         <p class="card-text">{{ room.description }}</p>
+        
         <p><strong>£{{ "%.2f"|format(room.price) }}</strong> per night</p>
       </div>
+
     </div>
   </div>
   {% endfor %}
+
 </div>
 {% endblock %}
