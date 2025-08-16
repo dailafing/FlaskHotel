@@ -1,19 +1,40 @@
 {% extends "base.html" %}
+
 {% block content %}
+
 <h1 class="mb-4">My bookings</h1>
+
 <table class="table table-striped">
-  <thead><tr><th>Room</th><th>From</th><th>To</th><th>Status</th></tr></thead>
-  <tbody>
-  {% for b in bookings %}
+
+  <thead>
     <tr>
-      <td>{{ b.room.name }}</td>
-      <td>{{ b.start_date }}</td>
-      <td>{{ b.end_date }}</td>
-      <td>{{ b.status }}</td>
+      <th>Room</th>
+      <th>From</th>
+      <th>To</th>
+      <th>Status</th>
     </tr>
-  {% else %}
-    <tr><td colspan="4">No bookings yet.</td></tr>
-  {% endfor %}
+  </thead>
+
+
+  <tbody>
+
+    {% for b in bookings %}
+      <tr>
+
+        <td>{{ b.room.name }}</td>
+        <td>{{ b.start_date }}</td>
+        <td>{{ b.end_date }}</td>
+        <td>{{ b.status }}</td>
+
+      </tr>
+    {% else %}
+      <tr>
+        <td colspan="4">No bookings yet.</td>
+      </tr>
+    {% endfor %}
+
   </tbody>
+
 </table>
+
 {% endblock %}
