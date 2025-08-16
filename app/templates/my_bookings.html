@@ -12,6 +12,7 @@
       <th>From</th>
       <th>To</th>
       <th>Status</th>
+      <th>Actions</th>
     </tr>
   </thead>
 
@@ -26,10 +27,19 @@
         <td>{{ b.end_date }}</td>
         <td>{{ b.status }}</td>
 
+        <td>
+          <a href="{{ url_for('main.edit_booking', booking_id=b.id) }}" class="btn btn-sm btn-outline-primary">Edit</a>
+
+          <form action="{{ url_for('main.delete_booking', booking_id=b.id) }}" method="post" style="display:inline;">
+            <button class="btn btn-sm btn-outline-danger" onclick="return confirm('Cancel this booking?')">Cancel</button>
+          </form>
+        </td>
+
+
       </tr>
     {% else %}
       <tr>
-        <td colspan="4">No bookings yet.</td>
+        <tr><td colspan="5" class="text-muted">No bookings yet.</td></tr>
       </tr>
     {% endfor %}
 
