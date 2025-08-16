@@ -1,25 +1,35 @@
 {% extends "base.html" %}
+
 {% block content %}
+
 <h1 class="mb-3">Book: {{ room.name }}</h1>
 
 <form method="post" novalidate aria-label="Booking form">
+
   {{ form.csrf_token }}
   <div class="row g-3">
+
     <div class="col-md-3">
       <label class="form-label" for="{{ form.start_date.id }}">Check‑in</label>
       {{ form.start_date(class="form-control", aria_label="Check-in date") }}
     </div>
+
     <div class="col-md-3">
       <label class="form-label" for="{{ form.end_date.id }}">Check‑out</label>
       {{ form.end_date(class="form-control", aria_label="Check-out date") }}
     </div>
+
     <div class="col-md-3">
       <label class="form-label" for="{{ form.guests.id }}">Guests</label>
       {{ form.guests(class="form-control", aria_label="Number of guests") }}
     </div>
+
     <div class="col-12">
       {{ form.submit(class="btn btn-success mt-2") }}
     </div>
+
   </div>
+
 </form>
+
 {% endblock %}
