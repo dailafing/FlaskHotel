@@ -1,7 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
 
-<h1 class="mb-4">Available Rooms</h1>
+<!-- Hero banner -->
+<div class="card mb-5 border-0">
+
+  <img src="{{ url_for('static', filename='images/HotelSml.jpg') }}"
+    class="card-img"
+    alt="Hailey's Hotel exterior image">
+
+  <div class="card-img-overlay d-flex align-items-center justify-content-center">
+    <h1 class="display-4 fw-bold text-white bg-dark bg-opacity-50 p-3 rounded">
+      Welcome to Hailey's Hotel
+    </h1>
+  </div>
+
+</div>
+
 
 <div class="row">
 
