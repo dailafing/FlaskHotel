@@ -30,6 +30,64 @@
 
   </div>
 
-</form>
+<script>
+/* Guest buttons */
+document.querySelectorAll(".guest-btn").forEach(btn => {
+  btn.addEventListener("click", () => {
+    const count = btn.dataset.count;
+    /* update hidden WTForms field */
+    document.getElementById("{{ form.guests.id }}").value = count;
+
+    /* visual selection */
+    btn.parentElement.querySelectorAll(".guest-btn")
+       .forEach(b => b.classList.remove("is-selected"));
+    btn.classList.add("is-selected");
+  });
+});
+
+/* Night buttons  */
+const startInput = document.getElementById("{{ form.start_date.id }}");
+const endInput   = document.getElementById("{{ form.end_date.id }}");
+
+function setCheckout(nights) {
+  const start = new Date(startInput.value);
+  if (!isNaN(start)) {
+    const checkout = new Date(start);
+    checkout.setDate(start.getDate() + nights);
+    endInput.valueAsDate = checkout;
+  }
+}
+
+/* update end date whenever check-in changes */
+startInput.addEventListener("change", () => {
+  const sel = document.querySelector(".js-nights.is-selected");
+  const nights = sel ? parseInt(sel.dataset.nights) : 1;
+  setCheckout(nights);
+});
+
+document.querySelectorAll(".js-nights").forEach(btn => {
+  btn.addEventListener("click", () => {
+    /* visual toggle */
+    btn.parentElement.querySelectorAll(".js-nights")
+       .forEach(b => b.classList.remove("is-selected"));
+    btn.classList.add("is-selected");
+
+    /* date logic */
+    setCheckout(parseInt(btn.dataset.nights));
+  });
+});
+
+/* Default: if endDate empty, set to +1 night on page load */
+window.addEventListener("DOMContentLoaded", () => {
+  const sel = document.querySelector(".js-nights.is-selected");
+  const nights = sel ? parseInt(sel.dataset.nights) : 1;
+  if (!endInput.value) setCheckout(nights);
+});
+
+
+
+
+</script>
+
 
 {% endblock %}
