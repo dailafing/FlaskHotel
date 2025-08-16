@@ -6,6 +6,8 @@ from .forms import BookingForm
 
 bp = Blueprint("main", __name__)
 
+# Main Routes
+
 @bp.route("/flash-test")
 def flash_test():
     flash("This is a test success message.", "success")
@@ -16,6 +18,14 @@ def flash_test():
 def index():
     rooms = Room.query.all()
     return render_template("index.html", rooms=rooms)
+
+@bp.route("/contact")
+def contact():
+    return render_template("contact.html")
+
+
+
+# Booking Routes
 
 @bp.route("/rooms/<int:room_id>/book", methods=["GET", "POST"])
 def book_room(room_id):
@@ -59,6 +69,7 @@ def my_bookings():
     bookings = Booking.query.order_by(Booking.start_date.desc()).all()
     return render_template("my_bookings.html", bookings=bookings)
 
-@bp.route("/contact")
-def contact():
-    return render_template("contact.html")
+
+
+
+
