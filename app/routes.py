@@ -1,4 +1,5 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
+from flask_login import login_required, current_user
 from datetime import date
 from .models import Room, Booking
 from . import db
@@ -66,8 +67,9 @@ def book_room(room_id):
 
 
 @bp.route("/my-bookings")
+@login_required
 def my_bookings():
-    bookings = Booking.query.order_by(Booking.start_date.desc()).all()
+    bookings = Booking.query.filter_by(user_id=current_user.id).all()
     return render_template("my_bookings.html", bookings=bookings)
 
 
