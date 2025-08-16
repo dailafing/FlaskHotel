@@ -1,202 +1,267 @@
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+/* variables */
+:root {
+  /* pinks */
+  --pink-50:  #fff1f7;
+  --pink-100: #ffe1ef;
+  --pink-200: #ffc1dd;
+  --pink-300: #ff99c5;
+  --pink-400: #ff70b0;
+  --pink-500: #ff4da6;
+  --pink-600: #ff2a97;
+  --pink-700: #e6007e;
+
+  /* neutrals */
+  --ink-900:  #111111;
+  --ink-700:  #333333;
+  --ink-400:  #9a9a9a;
+  --ink-300:  #cccccc;
+  --ink-200:  #e6e6e6;
+  --white:    #ffffff;
+
+  /* sizing */
+  --radius:   10px;
+  --pad-y:    0.7rem;
+  --pad-x:    1.0rem;
+
+  /* focus */
+  --focus-ring: 0 0 0 3px rgba(255, 77, 166, 0.35);
 }
 
-.site-warning-banner {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: rgba(209, 34, 242, 1.0);
-    color: rgba(255, 255, 255, 0.8);
-    text-align: center;
-    padding: 10px;
-    z-index: 9999;
-    box-shadow: 0 5px 30px rgba(0, 0, 0, 1);
+/* base reset that is safe */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  color: var(--ink-900);
+  background: var(--white);
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Arial, sans-serif;
+  line-height: 1.5;
 }
 
-.main-content {
-    padding-top: 60px;
-    text-align: center;
-    margin-bottom: 30px;
+/* links */
+a { color: var(--pink-600); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* layout helpers */
+.container { width: min(1100px, 100% - 2rem); margin: 0 auto; }
+.stack > * + * { margin-top: 0.75rem; }
+
+/* booking panels */
+.booking-strip,
+.booking-card {
+  background: var(--pink-50);
+  border: 1px solid var(--pink-100);
+  border-radius: calc(var(--radius) + 4px);
+  padding: 1rem;
 }
 
-.login-container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding-top: 10px;
+/* input fields */
+.input,
+select.input,
+textarea.input,
+input[type="text"].input,
+input[type="email"].input,
+input[type="tel"].input,
+input[type="number"].input,
+input[type="date"].input {
+  width: 100%;
+  border: 1px solid var(--ink-200);
+  border-radius: var(--radius);
+  padding: var(--pad-y) var(--pad-x);
+  background: var(--white);
+  color: var(--ink-900);
+  transition: border-color .15s ease, box-shadow .15s ease, background-color .15s ease;
 }
 
-.login-box {
-    border: 1px solid #999;
-    border-style: solid;
-    box-shadow: 0 0 12px rgba(209, 34, 242, 1.0);
-    padding:50px;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 400px;
-    box-sizing: border-box;
-    text-align: center;
+.input::placeholder { color: var(--ink-400); }
+
+.input:hover { border-color: var(--pink-300); }
+
+.input:focus {
+  outline: none;
+  border-color: var(--pink-500);
+  box-shadow: var(--focus-ring);
 }
 
-.hotel-image {
-    padding-bottom: 20px;
+/* buttons base */
+.btn {
+  appearance: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  padding: var(--pad-y) var(--pad-x);
+  background: var(--ink-200);
+  color: var(--ink-900);
+  font: inherit;
+  line-height: 1.1;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
+  transition:
+    background-color .15s ease,
+    border-color .15s ease,
+    color .15s ease,
+    box-shadow .15s ease,
+    transform .02s ease;
 }
 
-img {
-    border-radius: 8px;
-    width: 100%;
+.btn:disabled,
+.btn[aria-disabled="true"] {
+  opacity: 0.6;
+  cursor: not-allowed;
 }
 
-.login-box label {
-    display: block;
-    text-align: left;
-    margin: 15px 0 5px;
-    font-weight: bold;
-    font-size: 14px;
+/* buttons focus */
+.btn:focus { outline: none; }
+.btn:focus-visible { box-shadow: var(--focus-ring); }
+
+/* primary pink button */
+.btn--pink {
+  background: var(--pink-500);
+  border-color: var(--pink-500);
+  color: var(--white);
+}
+.btn--pink:hover {
+  background: var(--pink-400);
+  border-color: var(--pink-400);
+}
+.btn--pink:active {
+  background: var(--pink-700);
+  border-color: var(--pink-700);
+  transform: translateY(1px);
 }
 
-.login-box input[type="email"],
-.login-box input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    box-sizing: border-box;
+/* soft surface pink for segmented and toggle style buttons */
+.btn--pink-soft {
+  background: var(--pink-50);
+  color: var(--ink-900);
+  border-color: var(--pink-200);
+}
+.btn--pink-soft:hover {
+  background: var(--pink-100);
+  border-color: var(--pink-300);
+}
+.btn--pink-soft:active {
+  background: var(--pink-200);
+  border-color: var(--pink-400);
+  transform: translateY(1px);
 }
 
-.login-box button {
-    margin-top: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+/* outline variant */
+.btn--pink-outline {
+  background: transparent;
+  color: var(--pink-600);
+  border-color: var(--pink-300);
+}
+.btn--pink-outline:hover {
+  background: var(--pink-50);
+  border-color: var(--pink-400);
+}
+.btn--pink-outline:active {
+  background: var(--pink-100);
+  border-color: var(--pink-600);
+  transform: translateY(1px);
 }
 
-.login-box button:hover {
-    background-color: #0056b3;
+/* selected state for JS controlled toggles */
+.btn.is-selected {
+  background: var(--pink-500);
+  border-color: var(--pink-500);
+  color: var(--white);
+}
+.btn.is-selected:hover { background: var(--pink-400); }
+.btn.is-selected:active { background: var(--pink-700); }
+
+/* button groups spacing */
+.btn-group { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.btn-group .btn { margin: 0; }
+
+/* labels and small text */
+.label { display: inline-block; margin-bottom: 0.35rem; color: var(--ink-700); font-weight: 600; }
+.help { color: var(--ink-700); font-size: 0.9rem; }
+
+/* form rows for booking fields */
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+@media (min-width: 700px) {
+  .form-row--two { grid-template-columns: 1fr 1fr; }
+  .form-row--three { grid-template-columns: 1fr 1fr 1fr; }
 }
 
-.forgot-link, 
-.staff-link {
-    display: block;
-    margin-top: 15px;
-    font-size: 14px;
-    color: #007bff;
-    text-decoration: none;
+/* date input tweaks that are safe */
+input[type="date"].input::-webkit-calendar-picker-indicator {
+  cursor: pointer;
 }
 
-.forgot-link:hover,
-.staff-link:hover {
-    text-decoration: underline;
+/* pink focus for custom widgets in case a script adds data-focus */
+[data-focus="true"] { box-shadow: var(--focus-ring); }
+
+/* table stuff */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table th,
+.table td {
+  padding: 0.75rem;
+  border-bottom: 1px solid var(--ink-200);
+  text-align: left;
+}
+.table th {
+  color: var(--ink-700);
+  font-weight: 600;
+  background: var(--pink-50);
 }
 
-.login-wrapper {
-    width: 80%;
-    max-width: 400px;
-    box-sizing: border-box;
+/* cards for room types */
+.card {
+  background: var(--white);
+  border: 1px solid var(--ink-200);
+  border-radius: var(--radius);
+  overflow: hidden;
 }
+.card__body { padding: 1rem; }
+.card__footer { padding: 0.75rem 1rem; background: var(--pink-50); border-top: 1px solid var(--pink-100); }
 
-.staff-login {
-    text-align: left;
-    padding-left: 20px;
-    margin-top: 10px;
+/* spacing utilities */
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: 0.25rem; }
+.mt-2 { margin-top: 0.5rem; }
+.mt-3 { margin-top: 0.75rem; }
+.mt-4 { margin-top: 1rem; }
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: 0.25rem; }
+.mb-2 { margin-bottom: 0.5rem; }
+.mb-3 { margin-bottom: 0.75rem; }
+.mb-4 { margin-bottom: 1rem; }
+
+/* treat aria-pressed like .is-selected */
+.btn[aria-pressed="true"] {
+  background: var(--pink-500);
+  border-color: var(--pink-500);
+  color: var(--white);
 }
+.btn[aria-pressed="true"]:hover { background: var(--pink-400); }
+.btn[aria-pressed="true"]:active { background: var(--pink-700); }
 
-.create-account {
-    text-align: center;
-    margin-top: 20px;
+/* connected look for segmented groups */
+.btn-group.segmented .btn {
+  border-radius: 0;
 }
-
-.create-account-button {
-    display: inline-block;
-    padding: 10px 20px;
-    margin-top: 10px;
-    font-size: 16px;
-    font-family: inherit;
-    font-weight: 400;
-    background-color: #28a745;
-    color: white;
-    border-radius: 4px;
-    text-decoration: none;
-    text-align: center;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    line-height: normal;
+.btn-group.segmented .btn:first-child {
+  border-top-left-radius: var(--radius);
+  border-bottom-left-radius: var(--radius);
 }
-
-.create-account-button:hover {
-    background-color: #218838;
+.btn-group.segmented .btn:last-child {
+  border-top-right-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
 }
-
-.form-footer {
-    margin-top: 40px;
-}
-
-.gdpr-confirmation {
-    text-align: left;
-    margin-top: 20px;
-    display: flex;
-    gap: 10px;
-    align-items: flex-start;
-    font-size: 14px;
-}
-
-.gdpr-label {
-    font-weight: normal;
-}
-
-.success-message {
-    background-color: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
-    padding: 12px;
-    border-radius: 4px;
-    margin-bottom: 20px;
-    font-size: 14px;
-}
-
-.popup-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-}
-
-.popup-box {
-    background-color: white;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 12px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    font-size: 16px;
-    max-width: 300px;
-}
-
-.popup-box button {
-    margin-top: 15px;
-    padding: 8px 16px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-
-.popup-box button:hover {
-    background-color: #0056b3;
-}
-
