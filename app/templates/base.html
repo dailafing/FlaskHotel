@@ -29,6 +29,7 @@
 </head>
 <body>
 
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
         <div class="container">
@@ -44,6 +45,15 @@
     </nav>
 
     <div class="container mt-4">
+            {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="mb-3" aria-live="polite">
+          {% for category, message in messages %}
+            <div class="alert alert-{{ category }} mb-2" role="status">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
         {% block content %}{% endblock %}
     </div>
     
