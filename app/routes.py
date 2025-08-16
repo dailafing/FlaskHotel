@@ -1,9 +1,9 @@
-from flask import Blueprint, render_template, request, redirect, url_for, flash
-from flask_login import login_required, current_user
+from flask import Blueprint, render_template, request, redirect, url_for, flash, abort
+from flask_login import login_required, current_user, login_user, logout_user
 from datetime import date
-from .models import Room, Booking
+from .models import Room, Booking, User
 from . import db
-from .forms import BookingForm
+from .forms import BookingForm, RegisterForm, LoginForm
 
 bp = Blueprint("main", __name__)
 
@@ -50,7 +50,7 @@ def book_room(room_id):
             return render_template("book.html", room=room, form=form)
 
         booking = Booking(
-            user_id=1,  # temporary until I add auth
+            user_id=current_user.id,
             room_id=room.id,
             start_date=s,
             end_date=e
@@ -109,5 +109,55 @@ def delete_booking(booking_id):
     flash("Booking cancelled.", "warning")
     return redirect(url_for("main.my_bookings"))
 
+
+
+# Authenticatoin
+
+@bp.route("/register", methods=["GET", "POST"])
+def register():
+    """Create a new user account."""
+    if current_user.is_authenticated:
+        return redirect(url_for("main.index"))
+
+    form = RegisterForm()
+    if form.validate_on_submit():
+        if User.query.filter_by(email=form.email.data).first():
+            flash("Email is already registered.", "danger")
+            return render_template("register.html", form=form)
+
+        user = User(name=form.name.data, email=form.email.data)
+        user.set_password(form.password.data)
+        db.session.add(user)
+        db.session.commit()
+
+        flash("Account created! Please log in.", "success")
+        return redirect(url_for("main.login"))
+    return render_template("register.html", form=form)
+
+
+@bp.route("/login", methods=["GET", "POST"])
+def login():
+    """Log the user in."""
+    if current_user.is_authenticated:
+        return redirect(url_for("main.index"))
+
+    form = LoginForm()
+    if form.validate_on_submit():
+        user = User.query.filter_by(email=form.email.data).first()
+        if user and user.check_password(form.password.data):
+            login_user(user)
+            flash("Logged in successfully.", "success")
+            return redirect(request.args.get("next") or url_for("main.index"))
+        flash("Invalid email or password.", "danger")
+    return render_template("login.html", form=form)
+
+
+@bp.route("/logout")
+@login_required
+def logout():
+    """Log the user out."""
+    logout_user()
+    flash("You have been logged out.", "info")
+    return redirect(url_for("main.index"))
 
 
