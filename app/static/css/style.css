@@ -265,3 +265,8 @@ input[type="date"].input::-webkit-calendar-picker-indicator {
   border-top-right-radius: var(--radius);
   border-bottom-right-radius: var(--radius);
 }
+
+/* keep identical rounding for every button inside any .btn-group */
+.btn-group .btn {
+  border-radius: var(--radius) !important;
+}
