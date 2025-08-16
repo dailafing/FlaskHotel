@@ -21,7 +21,10 @@
 
         <p><strong>£{{ "%.2f"|format(room.price) }}</strong> per night</p>
         
-        <a class="btn btn-primary" href="{{ url_for('main.book_room', room_id=room.id) }}">Book this room</a>
+        <a class="btn btn-primary" href="{{ url_for('main.book_room', room_id=room.id) }}">
+          Book this room
+        </a>
+        
       </div>
 
     </div>
