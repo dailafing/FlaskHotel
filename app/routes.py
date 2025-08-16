@@ -64,12 +64,48 @@ def book_room(room_id):
         form.end_date.data = date.today()
     return render_template("book.html", room=room, form=form)
 
+
 @bp.route("/my-bookings")
 def my_bookings():
     bookings = Booking.query.order_by(Booking.start_date.desc()).all()
     return render_template("my_bookings.html", bookings=bookings)
 
 
+@bp.route("/bookings/<int:booking_id>/edit", methods=["GET", "POST"])
+def edit_booking(booking_id):
+    booking = Booking.query.get_or_404(booking_id)
+    form = BookingForm(obj=booking)
+
+    if form.validate_on_submit():
+        # Don't allow changing to overlapping dates
+        overlapping = Booking.query.filter(
+            Booking.room_id == booking.room_id,
+            Booking.id != booking.id,
+            Booking.start_date < form.end_date.data,
+            form.start_date.data < Booking.end_date
+        ).first()
+
+        if overlapping:
+            flash("Selected dates overlap with another booking.", "danger")
+            return render_template("edit_booking.html", form=form, booking=booking)
+
+        booking.start_date = form.start_date.data
+        booking.end_date = form.end_date.data
+        booking.guests = form.guests.data
+        db.session.commit()
+        flash("Booking updated.", "success")
+        return redirect(url_for("main.my_bookings"))
+
+    return render_template("edit_booking.html", form=form, booking=booking)
+
+
+@bp.route("/bookings/<int:booking_id>/delete", methods=["POST"])
+def delete_booking(booking_id):
+    booking = Booking.query.get_or_404(booking_id)
+    db.session.delete(booking)
+    db.session.commit()
+    flash("Booking cancelled.", "warning")
+    return redirect(url_for("main.my_bookings"))
 
 
 
