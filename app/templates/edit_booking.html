@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Edit Booking #{{ booking.id }}</h1>
+
+<form method="post">
+  {{ form.csrf_token }}
+
+  <div class="mb-3">
+    <label for="{{ form.start_date.id }}">Start Date</label>
+    {{ form.start_date(class="form-control") }}
+  </div>
+  <div class="mb-3">
+    <label for="{{ form.end_date.id }}">End Date</label>
+    {{ form.end_date(class="form-control") }}
+  </div>
+  <div class="mb-3">
+    <label for="{{ form.guests.id }}">Guests</label>
+    {{ form.guests(class="form-control") }}
+  </div>
+  <button class="btn btn-success">Save Changes</button>
+</form>
+
+<a href="{{ url_for('main.my_bookings') }}" class="btn btn-secondary mt-3">Back</a>
+{% endblock %}
