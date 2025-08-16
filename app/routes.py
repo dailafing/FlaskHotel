@@ -6,6 +6,12 @@ from .forms import BookingForm
 
 bp = Blueprint("main", __name__)
 
+@bp.route("/flash-test")
+def flash_test():
+    flash("This is a test success message.", "success")
+    flash("This is a test warning.", "warning")
+    return redirect(url_for("main.index"))
+
 @bp.route("/")
 def index():
     rooms = Room.query.all()
