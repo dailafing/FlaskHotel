@@ -21,12 +21,15 @@ def create_app():
     # when i migrate, i'll use this
     #export DATABASE_URL="mysql+pymysql://USER:PASSWORD@HOST:3306/DBNAME"
 
-    default_sqlite = "sqlite:///" + os.path.join(app.instance_path, "hotel.db")
-    app.config.update(
-        SECRET_KEY=os.environ.get("SECRET_KEY", "dev"),
-        SQLALCHEMY_DATABASE_URI=os.environ.get("DATABASE_URL", default_sqlite),
-        SQLALCHEMY_TRACK_MODIFICATIONS=False,
-    )
+    # default_sqlite = "sqlite:///" + os.path.join(app.instance_path, "hotel.db")
+    # app.config.update(
+    #     SECRET_KEY=os.environ.get("SECRET_KEY", "dev"),
+    #     SQLALCHEMY_DATABASE_URI=os.environ.get("DATABASE_URL", default_sqlite),
+    #     SQLALCHEMY_TRACK_MODIFICATIONS=False,
+    # )
+
+    app.config.from_object('config.Config')
+
 
     db.init_app(app)
     login_mgr.init_app(app)
