@@ -28,7 +28,7 @@ def create_app():
     #     SQLALCHEMY_TRACK_MODIFICATIONS=False,
     # )
 
-    app.config.from_object('config.Config')
+    app.config.from_object('instance.config.Config')
 
 
     db.init_app(app)
