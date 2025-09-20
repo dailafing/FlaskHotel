@@ -36,6 +36,10 @@ The application uses a simple relational structure with the following tables:
 - `Room` ...predefined rooms available for booking
 - `Booking` ...links users to rooms with selected dates
 
+A visual diagram of the schema is shown below:
+
+![Schema Diagram](docs/img/SchemaDiagram.png)
+
 ## Setup Instructions
 
 To run the app locally:
