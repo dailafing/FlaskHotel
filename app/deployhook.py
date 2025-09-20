@@ -1,5 +1,5 @@
 import os, hmac, hashlib, subprocess
-from flask import Blueprint, request
+from flask import Blueprint, request, Response
 from dotenv import load_dotenv
 
 # load the .env that sits in /home/dailafing/.env
@@ -22,3 +22,9 @@ def github_webhook():
     if not hmac.compare_digest(sig_header[7:], calc):
         return "Invalid signature", 403
 
+
+    # ── signature OK ───────────────────────────────────────────
+    subprocess.call(["git", "-C", "/home/dailafing/FlaskHotel", "pull"])
+    subprocess.call(["touch", "/var/www/dailafing_pythonanywhere_com_wsgi.py"])
+
+    return Response("Deployed", status=200)
