@@ -41,6 +41,10 @@ def create_app():
     from . import routes, models  # im improting models so migrations see them
     app.register_blueprint(routes.bp)
 
+    # register the deploy webhook
+    from .deployhook import blueprint as deploy_blueprint
+    app.register_blueprint(deploy_blueprint)
+
     return app
 
 @login_mgr.user_loader
