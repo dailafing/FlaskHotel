@@ -8,23 +8,30 @@
     
   {{ form.csrf_token }}
 
-  <div class="mb-3">
-    <label for="{{ form.start_date.id }}">Start Date</label>
-    {{ form.start_date(class="form-control") }}
-  </div>
+  <fieldset>
+    
+    <legend class="visually-hidden">Create & Edit booking details</legend>
 
-  <div class="mb-3">
-    <label for="{{ form.end_date.id }}">End Date</label>
-    {{ form.end_date(class="form-control") }}
-  </div>
+    <div class="mb-3">
+      <label for="{{ form.start_date.id }}">Start Date</label>
+        {{ form.start_date(class="form-control", aria_describedby="startHelp") }}
+      <div id="startHelp" class="form-text">Format: DD-MM-YYYY</div>
+    </div>
 
-  <div class="mb-3">
-    <label for="{{ form.guests.id }}">Guests</label>
-    {{ form.guests(class="form-control") }}
-  </div>
+    <div class="mb-3">
+      <label for="{{ form.end_date.id }}">End Date</label>
+        {{ form.end_date(class="form-control", aria_describedby="endHelp") }}
+      <div id="endHelp" class="form-text">Format: DD-MM-YYYY</div>
+    </div>
 
-  <button class="btn btn-success">Save Changes</button>
+    <div class="mb-3">
+      <label for="{{ form.guests.id }}">Guests</label>
+      {{ form.guests(class="form-control") }}
+    </div>
 
+    <button class="btn btn-success">Save Changes</button>
+
+  </fieldset>
 </form>
 
 <a href="{{ url_for('main.my_bookings') }}" class="btn btn-secondary mt-3">Back</a>
