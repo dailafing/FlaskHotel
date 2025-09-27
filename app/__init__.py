@@ -25,7 +25,7 @@ def create_app():
     migrate.init_app(app, db)
     bcrypt.init_app(app)
 
-    login_mgr.login_view = "main.index" # redirect Unauthenticated users
+    login_mgr.login_view = "main.login" # redirect Unauthenticated users
 
     from . import routes, models  # im improting models so migrations see them
     app.register_blueprint(routes.bp)
