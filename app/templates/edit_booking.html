@@ -9,7 +9,7 @@
   {{ form.csrf_token }}
 
   <fieldset>
-    
+
     <legend class="visually-hidden">Create & Edit booking details</legend>
 
     <div class="mb-3">
@@ -25,8 +25,11 @@
     </div>
 
     <div class="mb-3">
-      <label for="{{ form.guests.id }}">Guests</label>
-      {{ form.guests(class="form-control") }}
+      <label for="{{ form.guests.id }}">Number of Guests Attending</label>
+        {{ form.guests(class="form-control", aria_describedby="guestsHelp") }}
+      <div id="guestsHelp" class="form-text">
+        Choose how many guests will be attending. This may affect room availability.
+      </div>
     </div>
 
     <button class="btn btn-success">Save Changes</button>
