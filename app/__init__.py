@@ -1,5 +1,5 @@
 import os
-from flask import Flask
+from flask import Flask, render_template
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
 from flask_migrate import Migrate
@@ -33,6 +33,14 @@ def create_app():
     # register the deploy webhook
     from .deployhook import blueprint as deploy_blueprint
     app.register_blueprint(deploy_blueprint)
+
+    @app.errorhandler(404)
+    def not_found_error(error):
+        return render_template("404.html"), 404
+
+    @app.errorhandler(500)
+    def internal_error(error):
+        return render_template("500.html"), 500
 
     return app
 
