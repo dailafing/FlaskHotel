@@ -55,7 +55,7 @@
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
                 <!-- Hidden screen reader region -->
-                <div class="sr-only" aria-live="polite" aria-atomic="true">
+                <div class="visually-hidden" aria-live="polite" aria-atomic="true">
                     {{ messages[0][1] }}
                 </div>
 
