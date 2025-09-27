@@ -29,6 +29,7 @@ def contact():
 # Booking Routes
 
 @bp.route("/rooms/<int:room_id>/book", methods=["GET", "POST"])
+@login_required
 def book_room(room_id):
     room = Room.query.get_or_404(room_id)
     form = BookingForm()
