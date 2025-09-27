@@ -31,7 +31,7 @@
     <div id="confirmHelp" class="form-text">Repeat your password exactly.</div>
   </div>
   
-  {{ form.submit(class="btn btn-success") }}
+  {{ form.submit(class="btn btn-success", **{"aria-label": "Submit registration form"}) }}
 </form>
 
 {% endblock %}

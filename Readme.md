@@ -100,13 +100,26 @@ Each test documents the expected behaviour for key user actions and system respo
 ## Accessibility
 
 - Semantic HTML used throughout (e.g. `<main>`, `<nav>`, `<section>`)
+- Form inputs are paired with matching `<label for="">` elements
+- Flash messages wrapped in `aria-live="polite"` container
+- Using role="note" where relevant for the given context
+- Using aria-describedby to help screen readers
 - Colour contrast checked for compliance
+
+## Error Handling
+
+- Custom `404.html` page is rendered when a page is not found
+- Custom `500.html` is shown for server errors
+- Both templates provide consistent branding and user guidance
+- Flask app includes error handler functions in `__init__.py`
 
 ## Security
 
 - Passwords are hashed using bcrypt before storing
 - CSRF protection is enabled on all forms
 - Sensitive keys (e.g. `SECRET_KEY`) are not committed to repo
+- Production server runs with `DEBUG = False`
+- Session cookies are configured with `Secure` and `HttpOnly` flags
 
 ## Version Control
 
