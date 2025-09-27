@@ -7,10 +7,29 @@
 <form method="POST">
   {{ form.csrf_token }}
 
-  <div class="mb-3">{{ form.name.label }}{{ form.name(class="form-control") }}</div>
-  <div class="mb-3">{{ form.email.label }}{{ form.email(class="form-control") }}</div>
-  <div class="mb-3">{{ form.password.label }}{{ form.password(class="form-control") }}</div>
-  <div class="mb-3">{{ form.confirm.label }}{{ form.confirm(class="form-control") }}</div>
+  <div class="mb-3">
+    <label for="{{ form.name.id }}" class="form-label">Name</label>
+    {{ form.name(class="form-control", **{"aria-required": "true", "aria-describedby": "nameHelp"}) }}
+    <div id="nameHelp" class="form-text">Enter your full name.</div>
+  </div>
+
+  <div class="mb-3">
+    <label for="{{ form.email.id }}" class="form-label">Email</label>
+    {{ form.email(class="form-control", **{"aria-required": "true", "aria-describedby": "emailHelp"}) }}
+    <div id="emailHelp" class="form-text">Please enter your e-mail address here. We will never share your email with anyone else.</div>
+  </div>
+
+  <div class="mb-3">
+    <label for="{{ form.password.id }}" class="form-label">Password</label>
+    {{ form.password(class="form-control", **{"aria-required": "true", "aria-describedby": "passwordHelp"}) }}
+    <div id="passwordHelp" class="form-text">Choose a strong password.</div>
+  </div>
+
+  <div class="mb-3">
+    <label for="{{ form.confirm.id }}" class="form-label">Confirm Password</label>
+    {{ form.confirm(class="form-control", **{"aria-required": "true", "aria-describedby": "confirmHelp"}) }}
+    <div id="confirmHelp" class="form-text">Repeat your password exactly.</div>
+  </div>
   
   {{ form.submit(class="btn btn-success") }}
 </form>
