@@ -37,7 +37,7 @@ This document maps each Level 5 Diploma Project 3 criterion to the implementatio
 | Criterion | Requirement | Implementation Evidence | Status |
 |-----------|-------------|------------------------|--------|
 | **4.1** | Deploy final version to cloud-based hosting platform and test to ensure it matches development version | • **Cloud Platform**: Deployed on PythonAnywhere<br>• **Live URL**: https://dailafing.pythonanywhere.com/<br>• **Functionality**: All features working on live deployment<br>• **Testing**: Manual testing performed on live site (see TestPlan.md) | Done |
-| **4.2** | Ensure deployed application is free of commented out code and has no broken internal links | • **Clean Code**: NOT VERIFIED - requires audit for commented-out code<br>• **Link Testing**: All internal links tested and working<br>• **Navigation**: All menu items and buttons function correctly<br>• **No 404s**: All routes properly configured and accessible | Partially Done |
+| **4.2** | Ensure deployed application is free of commented out code and has no broken internal links | • **Clean Code**: Verified - no commented-out code found in codebase<br>• **Link Testing**: All internal links tested and working<br>• **Navigation**: All menu items and buttons function correctly<br>• **No 404s**: All routes properly configured and accessible | Done |
 | **4.3** | Document deployment process in README file explaining application purpose and value | • **Purpose**: Clearly described in `Readme.md` - paperless hotel booking system<br>• **Value**: Solves paper-based booking management for small accommodation providers<br>• **Deployment Instructions**: Detailed setup steps, prerequisites, local and production setup<br>• **Platform Info**: PythonAnywhere configuration, environment variables, webhook deployment | Done |
 
 ## Unit Learning Outcome 5: Identify and apply security features
@@ -61,13 +61,10 @@ This document maps each Level 5 Diploma Project 3 criterion to the implementatio
 ## Outstanding Requirements
 
 ### Criteria 1.6 - Code Validation
+
 - **Missing**: HTML validation documentation using W3C Markup Validator
 - **Missing**: CSS validation documentation using W3C CSS Validator
 - **Action Required**: Validate HTML and CSS and document results
-
-### Criteria 4.2 - Code Cleanup
-- **Missing**: Verification that deployed code is free of commented-out code
-- **Action Required**: Audit codebase for commented-out code and remove if found
 
 ## File References
 
