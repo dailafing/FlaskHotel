@@ -9,8 +9,9 @@ from wtforms.validators import (
 )
 
 
-# Booking form 
+# Booking form with date and guest validation
 class BookingForm(FlaskForm):
+    """Form for creating and editing room bookings."""
     start_date = DateField("Check-in",  validators=[DataRequired()])
     end_date   = DateField("Check-out", validators=[DataRequired()])
     guests     = IntegerField(
@@ -20,8 +21,9 @@ class BookingForm(FlaskForm):
     submit     = SubmitField("Confirm booking")
 
 
-# Registration from
+# Registration form with email and password validation
 class RegisterForm(FlaskForm):
+    """Form for user registration with password confirmation."""
     name     = StringField("Name",  validators=[DataRequired()])
     email    = StringField("Email", validators=[DataRequired(), Email()])
     password = PasswordField(
@@ -35,8 +37,9 @@ class RegisterForm(FlaskForm):
     submit   = SubmitField("Register")
 
 
-# Login form
+# Login form with email validation
 class LoginForm(FlaskForm):
+    """Form for user authentication."""
     email    = StringField("Email", validators=[DataRequired(), Email()])
     password = PasswordField("Password", validators=[DataRequired()])
     submit   = SubmitField("Log In")

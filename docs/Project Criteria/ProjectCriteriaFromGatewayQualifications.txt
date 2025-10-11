@@ -1,0 +1,80 @@
+Unit Learning Outcomes
+1.
+Design, develop and implement a Back end for a web application using Python and a framework.
+
+Assessment Criteria
+1.1
+Design a Front end for a data-driven web application that meets accessibility guidelines, follows the principles of UX design, meets its given purpose and provides a set of user interactions.
+
+1.2
+Implement custom HTML and CSS code to create a responsive full-stack application consisting of one or more HTML pages with relevant responses to user actions and a set of data manipulation functions.
+
+1.3
+Build a database-backed web application that allows users to store and manipulate data records about a particular domain.
+
+1.4
+Design a database structure that is relevant to the domain, including relationships between records of different entities.
+
+1.5
+Design and implement test procedures (automated or manual) to assess functionality, usability, responsiveness and data management within the Full Stack web application.
+
+1.6
+Write Python code that is consistent in style and conforms to the PEP8 style guide (or another explicitly mentioned style guide, such as Google's) and validated HTML and CSS code.
+
+1.7
+Write Python logic to demonstrate proficiency in the language.
+
+1.8
+Include functions with compound statements such as if conditions and/or loops in Python code.
+
+1.9
+Write code that meets minimum standards for readability (comments, indentation, consistent and meaningful naming conventions).
+
+1.10
+Name files consistently and descriptively, without spaces or capitalisation to allow for cross-platform compatibility.
+
+2.
+Model and manage data .
+
+Assessment Criteria
+2.1
+Design a data model that fits the purpose of the project.
+
+2.2
+Develop the model into a usable relational database where data is stored in a consistent and well-organised manner.
+
+3.
+Query and manipulate data.
+
+Assessment Criteria
+3.1
+Create functionality for users to create, locate, display, edit and delete records.
+
+4.
+Deploy a Full Stack web application to a Cloud platform.
+
+Assessment Criteria
+4.1
+Deploy a final version of the full-stack application code to a cloud-based hosting platform (e.g. Heroku) and test to ensure it matches the development version.
+
+4.2
+Ensure that final deployed code is free of commented out code and has no broken internal links.
+
+4.3
+Document the deployment process in a README file that also explains the application’s purpose and the value that it provides to its users.
+
+5.
+Identify and apply security features.
+
+Assessment Criteria
+5.1
+Use Git & GitHub for version control of a Full Stack web application up to deployment, using commit messages to document the development process.
+
+5.2
+Commit final code that is free of any passwords or secret keys, to the repository and to the hosting platform.
+
+5.3
+Use environment variables, or files that are in gitignore, to hide all secret keys.
+
+5.4
+Ensure that DEBUG mode is turned off in production versions.

@@ -2,6 +2,7 @@
 
 ## Table of Contents
 - [TestPlan](docs/TestPlan.md)
+- [Criteria Matching](docs/Project%20Criteria/CriteriaMatching.md)
 
 ## Project Purpose
 
@@ -120,6 +121,23 @@ Each test documents the expected behaviour for key user actions and system respo
 - Sensitive keys (e.g. `SECRET_KEY`) are not committed to repo
 - Production server runs with `DEBUG = False`
 - Session cookies are configured with `Secure` and `HttpOnly` flags
+
+## Code Quality & Validation
+
+- **PEP8 Compliance**: Python code follows PEP8 style guidelines with consistent naming, indentation, and line length
+- **HTML Validation**: All HTML templates validated using W3C Markup Validator, ensuring clean semantic structure
+- **CSS Validation**: Custom CSS validated using W3C CSS Validator, ensuring proper syntax and cross-browser compatibility
+- **Code Comments**: Complex logic documented with explanatory comments for maintainability
+
+## Python Language Proficiency
+
+The application demonstrates proficiency in Python through:
+- **Data Types**: Strings, integers, floats, booleans, dates, and datetime objects
+- **Collections**: Lists (room queries), dictionaries (form data), tuples, and sets
+- **Control Structures**: if/elif/else conditions, for loops, while loops, and nested logic
+- **Functions**: Modular functions with parameters, return values, and compound statements
+- **Object-Oriented Programming**: Classes, inheritance, and method definitions
+- **Error Handling**: Try/except blocks and proper exception management
 
 ## Version Control
 
