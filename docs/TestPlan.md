@@ -1,4 +1,4 @@
-# Test Plan – Flash Hotel
+# Test Plan – Flask Hotel
 
 [← Back to Readme](../Readme.md)
 
@@ -21,5 +21,5 @@
 ---
 
 ## Notes
-- All tests were performed on the live deployment at [Flash Hotel on PythonAnywhere](https://dailafing.pythonanywhere.com/).
+- All tests were performed on the live deployment at [Flask Hotel on PythonAnywhere](https://dailafing.pythonanywhere.com/).
 - Screenshots are saved in the `docs/img/` folder.

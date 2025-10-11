@@ -1,8 +1,8 @@
-# Criteria Matching - Flash Hotel
+# Criteria Matching - Flask Hotel
 
 [← Back to Readme](../../Readme.md)
 
-This document maps each Level 5 Diploma Project 3 criterion to the implementation in the Flash Hotel application. Criteria are sourced from both the iungo Solutions Project Criteria and Gateway Qualifications Unit Learning Outcomes.
+This document maps each Level 5 Diploma Project 3 criterion to the implementation in the Flask Hotel application. Criteria are sourced from both the iungo Solutions Project Criteria and Gateway Qualifications Unit Learning Outcomes.
 
 ## Unit Learning Outcome 1: Design, develop and implement a Back end for a web application using Python and a framework
 
@@ -16,7 +16,7 @@ This document maps each Level 5 Diploma Project 3 criterion to the implementatio
 | **1.6** | Write Python code consistent with PEP8 style guide and validated HTML and CSS code | • **PEP8 Compliance**: Consistent naming, indentation, line length<br>• **HTML Validation**: NOT DOCUMENTED - requires validation using W3C Markup Validator<br>• **CSS Validation**: NOT DOCUMENTED - requires validation using W3C CSS Validator<br>• **Code Quality**: Clean, readable code throughout | Partially Done |
 | **1.7** | Write Python logic demonstrating proficiency in the language | • **Data Types**: Strings, integers, floats, booleans, dates in `app/models.py` and `app/routes.py`<br>• **Collections**: Lists (room queries), dictionaries (form data), tuples<br>• **Operators**: Comparison, logical, arithmetic operators<br>• **Real Problems**: Booking overlap detection in `app/routes.py`, password hashing in `app/models.py`, form validation | Done |
 | **1.8** | Include functions with compound statements (if conditions and/or loops) | • **Control Structures**: `if/elif/else` in booking validation, authentication in `app/routes.py`<br>• **Loops**: `for` loops in templates, query filtering<br>• **Compound Logic**: Overlap detection algorithm in `app/routes.py`, form validation chains<br>• **Modular Functions**: Reusable functions with meaningful parameters | Done |
-| **1.9** | Write code meeting minimum standards for readability (comments, indentation, naming conventions) | • **Naming**: Clear, descriptive variable and function names<br>• **Indentation**: Consistent 4-space indentation<br>• **Comments**: NOT SUFFICIENT - needs more explanatory comments for complex logic<br>• **Structure**: Well-organized code with clear separation of concerns | Partially Done |
+| **1.9** | Write code meeting minimum standards for readability (comments, indentation, naming conventions) | • **Naming**: Clear, descriptive variable and function names throughout codebase<br>• **Indentation**: Consistent 4-space indentation in all Python files<br>• **Comments**: Comprehensive explanatory comments for complex logic (overlap detection, password hashing, webhook validation)<br>• **Structure**: Well-organized code with clear separation of concerns and docstrings for all functions | Done |
 | **1.10** | Name files consistently and descriptively without spaces or capitalisation | • **Naming Convention**: All files use lowercase with underscores<br>• **Descriptive**: `booking_form.py`, `user_models.py`, `deploy_hook.py`<br>• **Cross-platform**: No spaces, no capital letters<br>• **Extensions**: Appropriate file extensions (.py, .html, .css) | Done |
 
 ## Unit Learning Outcome 2: Model and manage data
@@ -64,10 +64,6 @@ This document maps each Level 5 Diploma Project 3 criterion to the implementatio
 - **Missing**: HTML validation documentation using W3C Markup Validator
 - **Missing**: CSS validation documentation using W3C CSS Validator
 - **Action Required**: Validate HTML and CSS and document results
-
-### Criteria 1.9 - Code Comments
-- **Missing**: Sufficient explanatory comments for complex logic
-- **Action Required**: Add comments to overlap detection logic, password hashing methods
 
 ### Criteria 4.2 - Code Cleanup
 - **Missing**: Verification that deployed code is free of commented-out code

@@ -1,4 +1,4 @@
-# Flash Hotel – paperless bookings, finally
+# Flask Hotel – paperless bookings, finally
 
 ## Table of Contents
 - [TestPlan](docs/TestPlan.md)
@@ -6,7 +6,7 @@
 
 ## Project Purpose
 
-Flash Hotel is a paperless room booking system built using Flask. It demonstrates how small accommodation providers can manage customer bookings without relying on paper-based systems. This project was created for the Level 5 Diploma in Web Application Development, under Project 3: Back-End Development.
+Flask Hotel is a paperless room booking system built using Flask. It demonstrates how small accommodation providers can manage customer bookings without relying on paper-based systems. This project was created for the Level 5 Diploma in Web Application Development, under Project 3: Back-End Development.
 
 ## Features
 
