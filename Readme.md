@@ -2,6 +2,7 @@
 
 ## Table of Contents
 - [TestPlan](docs/TestPlan.md)
+- [HTML/CSS Valication](docs/htmlCssValidation.md)
 - [Criteria Matching](docs/Project%20Criteria/CriteriaMatching.md)
 
 ## Project Purpose
