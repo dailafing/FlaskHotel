@@ -17,7 +17,12 @@ class User(UserMixin, db.Model):
         """Hash raw password and store it securely.
         
         Uses bcrypt to generate a salted hash that cannot be reversed.
-        The hash is stored as a UTF-8 string in the database.
+        bcrypt automatically generates a random salt for each password,
+        making rainbow table attacks ineffective. The hash is stored as 
+        a UTF-8 string in the database, never storing the plain text password.
+        
+        Args:
+            password (str): The plain text password to hash
         """
         self.password_hash = bcrypt.generate_password_hash(password).decode("utf-8")
 
@@ -25,7 +30,14 @@ class User(UserMixin, db.Model):
         """Verify raw password against stored hash.
         
         Compares the provided password with the stored hash using bcrypt.
-        Returns True if password matches, False otherwise.
+        bcrypt handles the salt extraction and comparison automatically,
+        providing constant-time comparison to prevent timing attacks.
+        
+        Args:
+            password (str): The plain text password to verify
+            
+        Returns:
+            bool: True if password matches, False otherwise
         """
         return bcrypt.check_password_hash(self.password_hash, password)
 

@@ -47,7 +47,10 @@ def book_room(room_id):
             return render_template("book.html", room=room, form=form)
 
         # Check for overlapping bookings using date range intersection logic
-        # A booking overlaps if: new_start < existing_end AND new_end > existing_start
+        # Two date ranges overlap if: new_start < existing_end AND new_end > existing_start
+        # This prevents double-booking by ensuring no two bookings have overlapping date ranges
+        # Example: If existing booking is Jan 5-10, new booking Jan 8-12 would overlap
+        # because Jan 8 < Jan 10 (existing end) AND Jan 12 > Jan 5 (existing start)
         overlap = Booking.query.filter(
             Booking.room_id == room.id,
             Booking.start_date < e,  # existing booking ends after new booking starts
@@ -94,6 +97,8 @@ def edit_booking(booking_id):
     if form.validate_on_submit():
         # Don't allow changing to overlapping dates
         # Check for conflicts with other bookings (excluding current booking being edited)
+        # Uses same overlap detection logic as booking creation but excludes the current booking
+        # This prevents users from editing their booking to conflict with other existing bookings
         overlapping = Booking.query.filter(
             Booking.room_id == booking.room_id,
             Booking.id != booking.id,  # exclude the booking being edited
