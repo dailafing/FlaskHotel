@@ -49,7 +49,7 @@
         <div class="col-sm-4">
           <label class="form-label">Guests</label>
           <!-- Hidden field (keeps WTForms validation) -->
-          {{ form.guests(type="hidden") }}
+          {{ form.guests(class="form-control d-none") }}
 
           <div class="btn-group d-flex" role="group" aria-label="Guest count">
             {% for g in [1,2,3,4,5] %}
