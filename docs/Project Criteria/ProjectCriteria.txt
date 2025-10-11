@@ -1,0 +1,254 @@
+Level 5 Web Development. Project 3: Back End Development
+@iungo_solutions
+https://iungo.solutions/
+© iungo Solutions Limited - Part of the iungo Group
+
+Project 3: Criteria.
+
+1.1
+Design a Front end for a data-driven web application that meets accessibility guidelines, follows the principles of UX design, meets its given purpose and provides a set of user interactions.
+
+1.2
+Implement custom HTML and CSS code to create a responsive full-stack application consisting of one or more HTML pages with relevant responses to user actions and a set of data manipulation functions.
+
+1.3
+Build a database-backed web application that allows users to store and manipulate data records about a particular domain.
+
+1.4
+Design a database structure that is relevant to the domain, including relationships between records of different entities.
+
+1.5
+Design and implement test procedures (automated or manual) to assess functionality, usability, responsiveness and data management within the Full Stack web application.
+
+1.6
+Write Python code that is consistent in style and conforms to the PEP8 style guide (or another explicitly mentioned style guide, such as Google's) and validated HTML and CSS code.
+
+1.7
+Write Python logic to demonstrate proficiency in the language.
+
+1.8
+Include functions with compound statements such as if conditions and/or loops in Python code.
+
+1.9
+Write code that meets minimum standards for readability (comments, indentation, consistent and meaningful naming conventions).
+
+1.10
+Name files consistently and descriptively, without spaces or capitalisation to allow for cross-platform compatibility.
+
+Criteria 1
+
+1.1 Design a Front end for a data-driven web application that meets accessibility guidelines, follows the principles of UX design, meets its given purpose and provides a set of user interactions:
+● The application is accessible (e.g. readable by screen readers, has good colour contrast, can be used with a keyboard, etc. use aria-labels).
+● Follows good User Experience (UX) principles (e.g. easy to use, logical layout, clear design).
+● Has a structured layout (e.g. consistent sections, proper use of headers and containers).
+● Includes a navigation model (e.g. menus or links to move between parts of the site)
+● Clearly meets its intended purpose (e.g. if it's a booking system, users should be able to book something easily).
+
+1.2 Implement custom HTML and CSS code to create a responsive full-stack application consisting of one or more HTML pages with relevant responses to user actions and a set of data manipulation functions:
+● Full-Stack Application: The project needs both a frontend (your HTML/CSS) and a backend (your Flask application) that work together to create a complete web experience.
+● Data Manipulation Functions: Your backend code must include fundamental functions to perform data operations, which typically involves Create, Read, Update, and Delete (CRUD) operations on a database.
+● Dynamic User Interaction: The Flask backend must process user actions (like form submissions) and provide relevant responses, such as displaying new data or showing success/error messages.
+● Responsive design.
+
+1.3 Build a database-backed web application that allows users to store and manipulate data records about a particular domain:
+● Application must allow users to Create, Read, Update, and Delete data records with proper form handling and database operations
+● Implement a well-designed database schema with appropriate relationships
+
+1.4 Design a database structure that is relevant to the domain, including relationships between records of different entities:
+● Identify the key entities relevant to the application.
+● Create appropriate tables for each entity.
+● Normalize the database to reduce redundancy and improve data integrity.
+● Ensure data types are appropriate for the values they will store.
+● Include constraints (e.g. NOT NULL, UNIQUE) where appropriate.
+
+1.5 Design and implement test procedures (automated or manual) to assess functionality, usability, responsiveness and data management within the Full Stack web application:
+● Use automated testing tools for backend (e.g. pytest, unittest) and frontend.
+● Perform manual tests where automation is not practical.
+● Document all test cases and results clearly.
+● Debug and refine the application based on test outcomes.
+
+1.6 Write Python code that is consistent in style and conforms to the PEP8 style guide (or another explicitly mentioned style guide, such as Google's) and validated HTML and CSS code:
+● Use PEP8 conventions (or specified style guide) for Python code:
+● Validate HTML and CSS using tools, you used in previous assessments.
+● Ensure HTML and CSS code is clean, semantic, and accessible.
+
+1.7 Write Python logic to demonstrate proficiency in the language:
+● Use a variety of Python features such as: Variables, data types, and operators, lists, dictionaries, sets, and tuples.
+● Implement logic that solves real problems or fulfills user needs in the application.
+
+1.8 Include functions with compound statements such as if conditions and/or loops in Python code:
+● Use control structures inside functions, if, elif, else for decision-making, for and while loops for iteration.
+● Create reusable and modular functions with meaningful parameters.
+● Combine multiple statements logically within each function to achieve a task.
+
+1.9 Write code that meets minimum standards for readability (comments, indentation, consistent and meaningful naming conventions):
+● Use clear and descriptive variable and function names.
+● Maintain consistent indentation throughout the code.
+● Add comments to explain complex logic or steps.
+
+1.10 Name files consistently and descriptively, without spaces or capitalisation to allow for cross-platform compatibility:
+● Use lowercase letters and underscores to name files.
+● Avoid spaces and capital letters.
+● Ensure file names are descriptive and indicate their purpose or content.
+● Keep file extensions appropriate.
+
+Criteria 2
+Model and manage data.
+
+2.1
+Design a data model that fits the purpose of the project.
+
+2.2
+Develop the model into a usable relational database where data is stored in a consistent and well-organised manner.
+
+2.1 Design a data model that fits the purpose of the project:
+● Identify the key entities relevant to the domain (e.g. Customer, Product, Order).
+● Define the attributes (fields) for each entity based on the project's requirements.
+● Determine the relationships between entities (e.g. one-to-many, many-to-many).
+● Ensure the model supports all necessary use cases and workflows in the application.
+● Represent the model using Entity-Relationship (ER) diagrams or similar tools.
+
+2.2 Develop the model into a usable relational database where data is stored in a consistent and well-organised manner:
+● Create tables based on the data model, including appropriate field names and data types.
+● Define primary keys for unique identification of records.
+● Set up foreign keys to maintain referential integrity between related tables.
+● Populate the database with sample or real data to test functionality.
+● Ensure data is logically organized and easy to query and maintain.
+
+Criteria 3
+Query and manipulate data.
+
+3.1
+Create functionality for users to create, locate, display, edit and delete records.
+
+3.1. Create functionality for users to create, locate, display, edit and delete records:
+● Perform CRUD operations (Create, Read, Update, Delete)
+
+Criteria 4
+Deploy a Full Stack web application to a Cloud platform.
+
+4.1
+Deploy a final version of the full-stack application code to a cloud-based hosting platform and test to ensure it matches the development version.
+
+4.2
+Ensure that the deployed application is free of commented out code and has no broken internal links.
+
+4.3
+Document the deployment process in a README file that also explains the application's purpose and the value that it provides to its users.
+
+4.1. Deploy a final version of the full-stack application code to a cloud-based hosting platform and test to ensure it matches the development version.
+● Take your final working version of the website and deploy it online.
+● Use a cloud platform.
+● Make sure the site is fully functional and accessible via a live link.
+
+4.2. Ensure that the deployed application is free of commented out code and has no broken internal links.
+● Clean your code before final upload.
+● Test all internal links:
+○ Click through your site and make sure every menu/button/link works correctly and does not return a 404
+
+4.3. Document the deployment process in a README file that also explains the application's purpose and the value that it provides to its users.
+● Clearly describe the application's purpose in the README, including what problem it solves or the need it fulfills.
+● Explain the value to users, such as how it improves productivity, enables communication, or simplifies a task.
+● Provide detailed deployment instructions, including prerequisites (e.g. Python version, environment variables), setup steps, and how to run the app locally and in production.
+● Include information about the cloud platform used (e.g. Heroku), how to access the deployed app, and any configuration details needed (e.g. turning off debug mode, connecting to a production database).
+
+You can follow the same guide you used for project 2 to write your README file.
+
+Criteria 5
+Identify and apply security features.
+
+5.1
+Use Git & GitHub for version control of a Full Stack web application up to deployment, using commit messages to document the development process.
+
+5.2
+Commit final code that is free of any passwords or secret keys, to the repository and to the hosting platform.
+
+5.3
+Use environment variables, or files that are in gitignore, to hide all secret keys.
+
+5.4
+Ensure that DEBUG mode is turned off in production versions.
+
+5.1. Use Git & GitHub for version control of a Full Stack web application up to deployment, using commit messages to document the development process.
+● Use Git to track changes in your codebase: Commit regularly with clear messages (e.g. git commit -m "Added contact form").
+● Push your code to GitHub: Make sure your entire project is stored in a GitHub repository.
+● Show evidence of version control history: Include screenshots or logs showing different commits up to and including the deployment.
+
+5.2. Commit final code that is free of any passwords or secret keys, to the repository and to the hosting platform.
+● Before pushing code to GitHub or deploying to a hosting platform, remove all hardcoded passwords, API keys, and secret credentials from the codebase.
+● Use environment variables to securely store secrets (e.g. database passwords, API tokens).
+
+5.3. Use environment variables, or files that are in gitignore, to hide all secret keys.
+
+5.4. Ensure that DEBUG mode is turned off in production versions.
+
+Project 3: Project Examples.
+@iungo_solutions
+https://iungo.solutions/
+© iungo Solutions Limited - Part of the iungo Group
+
+Project examples
+
+Workout Tracker
+Overview: A fitness app that allows users to log workouts, track progress over time, and analyze performance. Users can create custom workout routines and record sessions.
+● User authentication (signup/login/logout).
+● Create workout routines (e.g. Push Day, Leg Day).
+● Log individual exercises (e.g. Bench Press: 3 sets x 10 reps).
+● Track progress over time (weight lifted, reps, etc.).
+● Visual progress charts (e.g. line graphs for strength gains).
+● Calendar view for workout history.
+● Responsive design for mobile and tablet use.
+● Optional: Integration with wearable APIs (Fitbit, Apple Health).
+
+Meal Planner App.
+Overview: A meal planning app where users can plan meals for the week, store recipes, and generate grocery lists automatically based on selected meals.
+● User login and personalized meal plans.
+● Add, view, and edit recipes with ingredients and instructions.
+● Weekly calendar to assign meals (breakfast, lunch, dinner).
+● Auto-generate shopping list from selected meals.
+● Tag recipes (vegetarian, gluten-free, quick, etc.).
+● Responsive UI for mobile use in the kitchen/store.
+
+Art Portfolio Gallery.
+Overview: An online portfolio platform where artists can showcase their work, organize it into categories, and share it with others. The app supports image uploads, user profiles, and a clean gallery-style layout.
+● User registration and login.
+● Upload artwork (images with title, description, date).
+● Create and manage categories (e.g. Illustration, Photography, Sculpture).
+● Public portfolio view with custom URL.
+● Private dashboard for editing and deleting artworks.
+● Responsive gallery layout with filters.
+● Optional: Comments section for visitors.
+● Admin moderation for inappropriate content.
+
+Mini Forum or Discussion Board
+Overview: A simple online forum where users can start discussion topics, post replies, and engage in threaded conversations. Suitable for niche communities or learning groups.
+● User registration and login system.
+● Create discussion topics with a title and description.
+● Post replies to topics (threaded or flat structure).
+● Edit/delete own posts.
+● Topic categories or tags (e.g. General, Tech, Feedback).
+● Admin moderation panel for managing users/posts.
+● Pagination and search functionality.
+● Responsive and accessible UI.
+
+Personal Diary App
+Overview: A private diary app where users can write daily entries, categorize them, and reflect on their thoughts. Designed to be simple, secure, and personal.
+● Secure user authentication.
+● Add diary entries with title, date, and rich text.
+● Tag entries (e.g. Travel, Work, Mood).
+● Search and filter past entries.
+● Calendar or timeline view.
+● Optional: Data export to PDF or plain text.
+
+Budget Planner
+Overview: A financial planning app that allows users to manage income and expenses, view monthly summaries, and stay on top of their finances.
+● User registration and secure login.
+● Add income and expense entries (with categories and amounts).
+● Monthly and yearly budget overview.
+● Optional: Pie charts or bar graphs to visualize spending.
+● Set budget goals per category (e.g. max £200 for food).
+● Alert when approaching budget limits.
+● Export data.
+● Responsive dashboard for desktop and mobile.
+
+We encourage you to create the project you are passionate about
